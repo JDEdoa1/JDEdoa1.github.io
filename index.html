@@ -5,11 +5,115 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Portfolio — Joseph Donald EDOA BEYALA</title>
   <style>
-    /* Styles précédents conservés pour design moderne et responsive */
+    /* ===================== GLOBAL ===================== */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    a { text-decoration: none; }
+    h2 { color: #0077b5; margin-bottom: 20px; }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 0;
+    }
+    /* ===================== HEADER ===================== */
+    .site-header {
+      background-color: #0077b5;
+      color: white;
+      padding: 20px 0;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: white;
+      color: #0077b5;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .desktop-links a {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+    }
+    .hero {
+      background-color: #e6f0f8;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .hero h1 { margin-bottom: 10px; font-size: 2rem; }
+    .hero p { margin-bottom: 20px; font-size: 1.1rem; }
+    .cta-row a {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #0077b5;
+      color: white;
+      border-radius: 5px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .cta-row a:hover { background-color: #005a87; }
+    /* ===================== SECTIONS ===================== */
+    section { padding: 40px 0; border-bottom: 1px solid #ddd; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill {
+      background-color: #0077b5;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    footer.site-footer {
+      background-color: #0077b5;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .desktop-links { display: flex; flex-direction: column; gap: 10px; }
+      .hero h1 { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <div class="brand">
@@ -33,141 +137,119 @@
         <h1 id="home">Joseph Donald EDOA BEYALA</h1>
         <p>Reservoir & Geo-Data Engineer – Energy | MS "Geo-Data Management for Energy Mix" — IFP School</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="assets/CV_EDOA_IFP.pdf" download>Télécharger mon CV (PDF)</a>
-          <a class="linkedin-btn" href="https://www.linkedin.com/in/joseph-donald-edoa-beyala-34083823b/" target="_blank">LinkedIn</a>
+          <a href="assets/CV_EDOA_IFP.pdf" download>📄 Télécharger mon CV (PDF)</a>
+          <a href="https://www.linkedin.com/in/joseph-donald-edoa-beyala-34083823b/" target="_blank">LinkedIn</a>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- MAIN -->
   <main>
     <!-- À propos -->
     <section id="about">
-      <h2>À propos</h2>
-      <div class="about">
+      <div class="container">
+        <h2>À propos</h2>
         <p>
           Petroleum Engineer, actuellement en MS "Geo-Data Management for Energy Mix" à l’IFP School.
           Développement d’une expertise à l’interface ingénierie réservoir, gestion et valorisation des données énergétiques,
           et transition énergétique. Mon objectif est d’intégrer un grand groupe de l’énergie pour contribuer à l’optimisation
           des ressources et aux projets de transition, en Afrique et à l’international.
         </p>
-        <div class="muted small">Langues : Français (natif), Anglais (B2)</div>
-        <div class="muted small">Email : <a href="mailto:edoabeyalajosephdonald@gmail.com">edoabeyalajosephdonald@gmail.com</a></div>
+        <p><strong>Langues :</strong> Français (natif), Anglais (B2)</p>
+        <p><strong>Email :</strong> <a href="mailto:edoabeyalajosephdonald@gmail.com">edoabeyalajosephdonald@gmail.com</a></p>
       </div>
     </section>
 
     <!-- Projets -->
     <section id="projects">
-      <h2>Projets récents</h2>
-      <div class="grid projects-grid">
-        <article class="project-card" data-title="Geo-data Dashboard" data-desc="Dashboard interactif pour visualiser et croiser données réservoir, production et capex." data-link="#">
-          <div class="project-thumb">Geo-data Dashboard</div>
-          <h3>Geo-data Dashboard</h3>
-          <div class="project-meta"><span>Power BI • Python • SQL</span><span>2025</span></div>
-        </article>
-        <article class="project-card" data-title="Simulation Réservoir" data-desc="Modélisation réservoir pour optimisation de récupération. Outils : PETREL, Eclipse, CMG." data-link="#">
-          <div class="project-thumb">Simulation Réservoir</div>
-          <h3>Simulation Réservoir</h3>
-          <div class="project-meta"><span>Petrel • Eclipse</span><span>2023</span></div>
-        </article>
+      <div class="container">
+        <h2>Projets récents</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Geo-data Dashboard</h3>
+            <p>Dashboard interactif pour visualiser et croiser données réservoir, production et capex.</p>
+            <p><strong>Outils :</strong> Power BI • Python • SQL</p>
+            <p><strong>Année :</strong> 2025</p>
+          </div>
+          <div class="card">
+            <h3>Simulation Réservoir</h3>
+            <p>Modélisation réservoir pour optimisation de récupération.</p>
+            <p><strong>Outils :</strong> Petrel • Eclipse • CMG</p>
+            <p><strong>Année :</strong> 2023</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Formation & Expériences -->
     <section id="cv">
-      <h2>Formation & Expériences</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>IFP School — MS "Geo-Data Management for Energy Mix"</h3>
-          <span>2025 – 2026</span>
+      <div class="container">
+        <h2>Formation & Expériences</h2>
+        <div class="grid">
+          <div class="card"><h3>IFP School — MS "Geo-Data Management for Energy Mix"</h3><span>2025 – 2026</span></div>
+          <div class="card"><h3>Master Ingénierie Pétrolière (Génie Réservoir)</h3><span>2021 – 2023</span></div>
+          <div class="card"><h3>Licence Ingénierie Pétrolière (Pétrole & Gaz)</h3><span>2018 – 2021</span></div>
+          <div class="card"><h3>Baccalauréat Scientifique (Maths & SVT)</h3><span>2014</span></div>
         </div>
-        <div class="card">
-          <h3>Master Ingénierie Pétrolière (Génie Réservoir)</h3>
-          <span>2021 – 2023</span>
-        </div>
-        <div class="card">
-          <h3>Licence Ingénierie Pétrolière (Pétrole & Gaz)</h3>
-          <span>2018 – 2021</span>
-        </div>
-        <div class="card">
-          <h3>Baccalauréat Scientifique (Maths & SVT)</h3>
-          <span>2014</span>
-        </div>
-      </div>
 
-      <h3 style="margin-top:30px">Expériences professionnelles</h3>
-      <div class="grid">
-        <div class="card">
-          <h3>Mengueme Town Hall – Project Coordinator (IT & Digitalization)</h3>
-          <span>2023</span>
-          <p>Pilotage de la digitalisation des services municipaux, supervision de l’équipe IT, intégration des outils numériques, suivi délais et ressources.</p>
-        </div>
-        <div class="card">
-          <h3>Bocom Gaz – Stagiaire (Gas Production Supervision)</h3>
-          <span>2023</span>
-          <p>Supervision des opérations de production de gaz, optimisation des processus et suivi maintenance.</p>
-        </div>
-        <div class="card">
-          <h3>Ministère de l’Eau et de l’Énergie – Stagiaire</h3>
-          <span>2023</span>
-          <p>Analyse du marché pétrolier, suivi des stocks de gaz et contribution à l’élaboration de politiques de régulation.</p>
-        </div>
-        <div class="card">
-          <h3>Bocom Petroleum – Assistant Manager QHSE</h3>
-          <span>2021</span>
-          <p>Gestion des risques, formation du personnel et veille stratégique en station-service.</p>
-        </div>
-        <div class="card">
-          <h3>Total Énergies – Stage ouvrier</h3>
-          <span>2019</span>
-          <p>Découverte des opérations et sensibilisation aux normes QHSE.</p>
+        <h3 style="margin-top:30px">Expériences professionnelles</h3>
+        <div class="grid">
+          <div class="card"><h3>Mengueme Town Hall – Project Coordinator</h3><span>2023</span><p>Digitalisation des services municipaux, supervision IT, intégration des outils numériques.</p></div>
+          <div class="card"><h3>Bocom Gaz – Stagiaire</h3><span>2023</span><p>Supervision de la production de gaz, optimisation des processus.</p></div>
+          <div class="card"><h3>Ministère de l’Eau et de l’Énergie – Stagiaire</h3><span>2023</span><p>Analyse du marché pétrolier, suivi des stocks, régulation.</p></div>
+          <div class="card"><h3>Bocom Petroleum – Assistant Manager QHSE</h3><span>2021</span><p>Gestion des risques, formation du personnel.</p></div>
+          <div class="card"><h3>Total Énergies – Stage ouvrier</h3><span>2019</span><p>Découverte des opérations et normes QHSE.</p></div>
         </div>
       </div>
     </section>
 
     <!-- Compétences -->
-    <section>
-      <h2>Compétences</h2>
-      <div class="skills-list">
-        <span class="skill">PETREL</span>
-        <span class="skill">Eclipse</span>
-        <span class="skill">CMG</span>
-        <span class="skill">Prosper</span>
-        <span class="skill">R Studio</span>
-        <span class="skill">Pack Office</span>
-        <span class="skill">SIG</span>
-        <span class="skill">Français (natif)</span>
-        <span class="skill">Anglais (B2)</span>
+    <section id="skills">
+      <div class="container">
+        <h2>Compétences</h2>
+        <div class="skills-list">
+          <span class="skill">PETREL</span>
+          <span class="skill">Eclipse</span>
+          <span class="skill">CMG</span>
+          <span class="skill">Prosper</span>
+          <span class="skill">R Studio</span>
+          <span class="skill">Pack Office</span>
+          <span class="skill">SIG</span>
+          <span class="skill">Français (natif)</span>
+          <span class="skill">Anglais (B2)</span>
+        </div>
       </div>
     </section>
 
     <!-- Publications & Certifications -->
     <section id="publications">
-      <h2>Publications & Certifications</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>[Titre de la publication ou certification]</h3>
-          <span>[Année]</span>
-          <p>[Description ou référence : ex. article, conférence, certification technique, etc.]</p>
+      <div class="container">
+        <h2>Publications & Certifications</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>[Titre de la publication ou certification]</h3>
+            <span>[Année]</span>
+            <p>[Description ou référence : ex. article, conférence, certification technique, etc.]</p>
+          </div>
         </div>
-        <!-- Ajoute ici d’autres cartes pour chaque publication ou certification -->
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Email : <a href="mailto:edoabeyalajosephdonald@gmail.com">edoabeyalajosephdonald@gmail.com</a></p>
-      <p>Téléphone : +33 07 64 48 84 43</p>
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email : <a href="mailto:edoabeyalajosephdonald@gmail.com">edoabeyalajosephdonald@gmail.com</a></p>
+        <p>Téléphone : +33 07 64 48 84 43</p>
+      </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">© 2025 Joseph Donald EDOA BEYALA</div>
   </footer>
 
-  <script>
-    // Interactions JS conservées comme dans la version précédente (menu, dropdown, modal, newsletter, smooth scroll)
-  </script>
 </body>
 </html>
